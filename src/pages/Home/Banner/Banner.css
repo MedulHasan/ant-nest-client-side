@@ -57,10 +57,9 @@
 }
 .guest-count {
     margin-top: 10px;
-<<<<<<< HEAD
-=======
+
     padding: 15px 5px;
->>>>>>> 591e528... error handle
+
     border-radius: 5px;
     background-color: rgb(255, 255, 255, 0.6);
 }

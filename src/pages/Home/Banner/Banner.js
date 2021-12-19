@@ -19,13 +19,6 @@ import {
     arrivalDateAction,
     departureDateAction,
 } from "../../../redux/action/searchAction";
-<<<<<<< HEAD
-
-const Banner = () => {
-    const dispatch = useDispatch();
-    const searchHouse = useSelector((state) => state.houses.searchHouse);
-
-=======
 import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
@@ -37,7 +30,6 @@ const Banner = () => {
         navigate("/listings", { state: { searchClick: true } });
     };
 
->>>>>>> 591e528... error handle
     return (
         <div className='banner'>
             <video autoPlay muted loop id='myVideo'>
@@ -154,15 +146,12 @@ const Banner = () => {
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
-                    <Button className='search-btn' variant='contained'>
-=======
+
                     <Button
                         onClick={handleSearch}
                         className='search-btn'
                         variant='contained'
                     >
->>>>>>> 591e528... error handle
                         Search
                     </Button>
                 </form>

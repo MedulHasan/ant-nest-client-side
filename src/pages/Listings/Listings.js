@@ -9,12 +9,7 @@ import {
     fetchRequest,
     fetchSuccess,
 } from "../../redux/action/houseAction";
-<<<<<<< HEAD
 
-const Listings = () => {
-    const dispatch = useDispatch();
-    const houses = useSelector((state) => state.houses.houses);
-=======
 import { useLocation } from "react-router-dom";
 
 const Listings = () => {
@@ -23,7 +18,6 @@ const Listings = () => {
     const houses = useSelector((state) => state.houses.houses);
     const searchHouse = useSelector((state) => state.houses.searchHouse);
     const guest = searchHouse.adult + searchHouse.child + searchHouse.babies;
->>>>>>> 591e528... error handle
 
     useEffect(() => {
         dispatch(fetchRequest());
@@ -36,9 +30,6 @@ const Listings = () => {
         <div className='listings-container'>
             <MapDirections />
             <div className='listing-house-container'>
-<<<<<<< HEAD
-                <p>Result For: </p>
-=======
                 {state && (
                     <p>
                         Result For: {searchHouse.address} |{" "}
@@ -47,7 +38,7 @@ const Listings = () => {
                         {guest} Guest
                     </p>
                 )}
->>>>>>> 591e528... error handle
+
                 <div className='listing-house-cont'>
                     {houses.map((house) => (
                         <House key={house.id} house={house} />

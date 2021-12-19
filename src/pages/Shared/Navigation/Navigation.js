@@ -13,19 +13,13 @@ import MenuItem from "@mui/material/MenuItem";
 import "./Navigation.css";
 import logo from "../../../image/logo.png";
 import { NavLink } from "react-router-dom";
-<<<<<<< HEAD
 
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
-const Navigation = () => {
-=======
 import { FaUser } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import { MdLogout } from "react-icons/md";
 
 const Navigation = () => {
     const { user, logout } = useAuth();
->>>>>>> 591e528... error handle
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -143,10 +137,9 @@ const Navigation = () => {
                                     Listings
                                 </NavLink>
                             </MenuItem>
-<<<<<<< HEAD
-=======
-                            <MenuItem onClick={handleCloseNavMenu}>
-                                {!user.email && (
+
+                            {!user.email && (
+                                <MenuItem onClick={handleCloseNavMenu}>
                                     <NavLink
                                         className='navigation-link'
                                         style={({ isActive }) => {
@@ -167,9 +160,8 @@ const Navigation = () => {
                                             </span>
                                         </div>
                                     </NavLink>
-                                )}
-                            </MenuItem>
->>>>>>> 591e528... error handle
+                                </MenuItem>
+                            )}
                         </Menu>
                     </Box>
                     <Box
@@ -209,19 +201,15 @@ const Navigation = () => {
                         >
                             Listings
                         </NavLink>
-<<<<<<< HEAD
                     </Box>
 
-                    <Box sx={{ flexGrow: 0, marginLeft: "15px" }}>
+                    {/* <Box sx={{ flexGrow: 0, marginLeft: "15px" }}>
                         <Tooltip title='Open settings'>
                             <IconButton
                                 onClick={handleOpenUserMenu}
                                 sx={{ p: 0 }}
                             >
-                                <Avatar
-                                    alt='Remy Sharp'
-                                    src='/static/images/avatar/2.jpg'
-                                />
+                                <Avatar alt='Medul Hasan' src={user.photoURL} />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -240,19 +228,14 @@ const Navigation = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem
-                                    key={setting}
-                                    onClick={handleCloseNavMenu}
-                                >
-                                    <Typography textAlign='center'>
-                                        {setting}
-                                    </Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Typography textAlign='center'>
+                                    Logout
+                                </Typography>
+                            </MenuItem>
                         </Menu>
-                    </Box>
-=======
+                    </Box> */}
+                    <Box>
                         {!user.email && (
                             <NavLink
                                 className='navigation-link'
@@ -324,7 +307,6 @@ const Navigation = () => {
                             </Menu>
                         </Box>
                     )}
->>>>>>> 591e528... error handle
                 </Toolbar>
             </Container>
         </AppBar>

@@ -13,15 +13,6 @@ import PrivateRoute from "./pages/SignIn/PrivateRoute/PrivateRoute";
 function App() {
     return (
         <div className='App'>
-            <Navigation />
-            <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/listings' element={<Listings />} />
-                <Route
-                    path='/singleHouseDetails'
-                    element={<SingleHouseDetails />}
-                />
-            </Routes>
             <AuthProvider>
                 <Navigation />
                 <Routes>

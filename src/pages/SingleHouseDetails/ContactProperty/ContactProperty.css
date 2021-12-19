@@ -31,8 +31,7 @@
     justify-content: space-between;
     margin-top: 20px !important;
 }
-<<<<<<< HEAD
-=======
+
 .total-price {
     font-weight: 700 !important;
 }
@@ -51,9 +50,8 @@
     margin-top: 20px;
     border: 0;
     border-radius: 5px;
-    background-color: #747575;
+    background-color: #747575 !important;
     color: #fff;
     width: 100%;
-    cursor: auto;
+    cursor: auto !important;
 }
->>>>>>> 591e528... error handle

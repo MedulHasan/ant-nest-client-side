@@ -8,8 +8,8 @@ const ConfirmPayment = () => {
         state.house;
     const { arrivalDate, departureDate, adult, child, babies } =
         state.searchHouses;
-    const arrivalDateMonth = arrivalDate.toDateString().split(" ");
-    const departureDateMonth = departureDate.toDateString().split(" ");
+    // const arrivalDateMonth = arrivalDate.toDateString().split(" ");
+    // const departureDateMonth = departureDate.toDateString().split(" ");
     return (
         <div className='review-house-rules-container'>
             <div>

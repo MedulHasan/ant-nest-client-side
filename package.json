@@ -15,10 +15,9 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "date-fns": "^2.27.0",
-<<<<<<< HEAD
-=======
+
     "firebase": "^9.6.1",
->>>>>>> 591e528... error handle
+
     "mapbox-gl": "^2.6.1",
     "photoswipe": "^4.1.3",
     "react": "^17.0.2",

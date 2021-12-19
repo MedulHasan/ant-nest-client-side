@@ -2,11 +2,10 @@
     display: flex;
 }
 .listing-house-container {
-<<<<<<< HEAD
     margin-top: 5% !important;
-=======
+
     margin-top: 6% !important;
->>>>>>> 591e528... error handle
+
     margin-left: auto;
 }
 .listing-house-cont {
