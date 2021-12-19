@@ -1,0 +1,5 @@
+.image-galary {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}

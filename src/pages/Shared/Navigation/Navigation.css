@@ -1,0 +1,25 @@
+.app-bar-container {
+    background-color: #fff !important;
+    color: #000 !important;
+    position: fixed !important;
+<<<<<<< HEAD
+    z-index: 10000;
+}
+.navigation-link {
+    text-decoration: none;
+=======
+    z-index: 25;
+}
+.navigation-link {
+    text-decoration: none;
+    margin: 0 10px !important;
+}
+.navigation-link:hover {
+    color: #6191fd !important;
+}
+.sign-in-nav {
+    display: flex;
+    align-items: center;
+    margin: 0 10px !important;
+>>>>>>> 591e528... error handle
+}

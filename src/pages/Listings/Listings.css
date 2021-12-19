@@ -1,0 +1,18 @@
+.listings-container {
+    display: flex;
+}
+.listing-house-container {
+<<<<<<< HEAD
+    margin-top: 5% !important;
+=======
+    margin-top: 6% !important;
+>>>>>>> 591e528... error handle
+    margin-left: auto;
+}
+.listing-house-cont {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+    justify-content: center;
+    align-items: center;
+}

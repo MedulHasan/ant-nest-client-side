@@ -1,0 +1,109 @@
+.single-card-container {
+    width: 390px;
+    background-color: #fff !important;
+}
+.single-card-container:hover {
+    background-color: #fff !important;
+}
+.card-image:hover {
+    opacity: 0.75;
+    transition: all 200ms linear;
+    cursor: pointer;
+}
+.card-image-container {
+    position: relative;
+}
+.card-location {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 20px;
+    bottom: 7px;
+    font-size: 14px;
+    color: #fff;
+}
+.bookmark {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    background: #fff;
+    padding: 7px;
+    border-radius: 5px;
+    font-size: 22px;
+}
+.bookmark:hover {
+    cursor: pointer;
+    color: #3270fc;
+    transition: all 200ms linear;
+}
+.card-images {
+    position: absolute;
+    right: 15px;
+    bottom: 7px;
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+}
+.card-title {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: rgb(145, 145, 145);
+}
+.card-title:hover {
+    color: #000;
+    transition: all 200ms linear;
+    cursor: pointer;
+}
+.house-price {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    color: #3270fc;
+}
+.house-details {
+    font-size: 13px !important;
+    color: rgb(145, 145, 145);
+}
+.bed-bath {
+    display: flex;
+    column-gap: 15px;
+    align-items: center;
+}
+.bed {
+    display: flex;
+    align-items: center;
+}
+.bed-icon {
+    font-size: 24px;
+    margin-right: 5px;
+    color: rgb(145, 145, 145);
+}
+.bath-icon {
+    font-size: 18px;
+    margin-right: 5px;
+    color: rgb(145, 145, 145);
+}
+.landlord-ratting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgb(197, 197, 197);
+    margin-top: 15px;
+    padding-top: 15px;
+}
+.landlord {
+    display: flex;
+    align-items: center;
+}
+.landlord img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.landlord-name {
+    font-size: 14px !important;
+    color: rgb(145, 145, 145);
+}
+.ratting {
+    font-size: 16px !important;
+}

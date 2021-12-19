@@ -1,0 +1,10 @@
+.room-details-cont {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+}
+.sigle-room-info {
+    padding: 25px 0;
+}

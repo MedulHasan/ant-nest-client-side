@@ -1,0 +1,59 @@
+.contact-room-container {
+    margin-top: 50px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.contact-room-container h6 {
+    background-color: #3270fc;
+    color: #fff;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 20px;
+}
+.contact-room-info {
+    padding: 10%;
+}
+.date-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+.data-price {
+    border-bottom: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px !important;
+}
+<<<<<<< HEAD
+=======
+.total-price {
+    font-weight: 700 !important;
+}
+.reserve-enable {
+    padding: 12px 18px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #3270fc;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+}
+.reserve-disable {
+    padding: 12px 18px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #747575;
+    color: #fff;
+    width: 100%;
+    cursor: auto;
+}
+>>>>>>> 591e528... error handle

@@ -1,0 +1,82 @@
+.banner {
+    position: relative;
+    color: #fff;
+}
+#myVideo {
+    object-fit: cover;
+    /* right: 0;
+    bottom: 0; */
+    width: 98.9vw;
+    height: 85vh;
+    opacity: 0.8;
+}
+.banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 60vh;
+    margin-left: 5%;
+}
+.search-container {
+    color: black;
+    width: 350px;
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    /* border: 1px solid; */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255, 0.5);
+}
+.date-search {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row !important;
+    column-gap: 8px;
+}
+.css-1lwbda4-MuiStack-root > :not(style) + :not(style) {
+    margin-top: 0px !important;
+}
+.adult-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 5%;
+    color: black;
+}
+.inc-drc {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+.inc-dec-icon {
+    cursor: pointer;
+}
+.guest-count {
+    margin-top: 10px;
+<<<<<<< HEAD
+=======
+    padding: 15px 5px;
+>>>>>>> 591e528... error handle
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255, 0.6);
+}
+.company-type {
+    font-size: 1vw !important;
+    font-weight: 700 !important;
+}
+.banner-title {
+    font-size: 3vw !important;
+    width: 65%;
+    font-weight: 700 !important;
+}
+.search-btn {
+    margin-top: 10px !important;
+    width: 100%;
+}
+.adult-search {
+    margin-bottom: 10px !important;
+}
