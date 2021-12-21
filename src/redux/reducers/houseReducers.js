@@ -11,6 +11,7 @@ import {
     ADDRESS,
     ARRIVAL_DATE,
     DEPARTURE_DATE,
+    ADULT_NULL,
 } from "../typeVariable";
 
 const initialState = {
@@ -19,8 +20,8 @@ const initialState = {
     error: "",
     searchHouse: {
         address: "",
-        arrivalDate: new Date(),
-        departureDate: new Date(),
+        arrivalDate: "",
+        departureDate: "",
         adult: 0,
         child: 0,
         babies: 0,
@@ -82,6 +83,18 @@ function houseReducers(state = initialState, action) {
                 },
             };
             return newAddress;
+        }
+        case ADULT_NULL: {
+            const newAdult = {
+                ...state,
+                searchHouse: {
+                    ...state.searchHouse,
+                    adult: 0,
+                    child: 0,
+                    babies: 0,
+                },
+            };
+            return newAdult;
         }
         case ADULT_MINUS: {
             const newAdult = {

@@ -2,8 +2,6 @@
     display: flex;
 }
 .listing-house-container {
-    margin-top: 5% !important;
-
     margin-top: 6% !important;
 
     margin-left: auto;
@@ -14,4 +12,18 @@
     gap: 17px;
     justify-content: center;
     align-items: center;
+}
+.search-result {
+    margin: 10px 0 !important;
+}
+.search-result-cont {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px !important;
+}
+.search-result-cont button {
+    background-color: rgb(15, 236, 225);
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
 }

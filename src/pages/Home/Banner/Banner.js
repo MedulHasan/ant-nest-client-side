@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable no-unused-vars */
+import React, { useReducer } from "react";
 import { Typography, TextField, Stack, Button } from "@mui/material";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -20,14 +21,23 @@ import {
     departureDateAction,
 } from "../../../redux/action/searchAction";
 import { useNavigate } from "react-router-dom";
+import CustomAlert from "../../Shared/CustomAlert/CustomAlert";
+import { alertReducer } from "../../../redux/reducers/alertReducer";
+import { infoAlert } from "../../../redux/action/alertAction";
 
 const Banner = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const searchHouse = useSelector((state) => state.houses.searchHouse);
+    const guest = searchHouse.adult + searchHouse.child + searchHouse.babies;
+    const date = searchHouse.arrivalDate && searchHouse.departureDate;
 
     const handleSearch = () => {
-        navigate("/listings", { state: { searchClick: true } });
+        if (searchHouse.address && date && guest) {
+            navigate("/listings");
+        } else {
+            dispatch(infoAlert(true));
+        }
     };
 
     return (
@@ -36,6 +46,7 @@ const Banner = () => {
                 <source src={banner} type='video/mp4' />
             </video>
             <div className='banner-container'>
+                <CustomAlert />
                 <p className='company-type'>Real Estate Searching Platform</p>
                 <Typography variant='h3' className='banner-title'>
                     Find The House of Your Dream Using Our Platform

@@ -9,7 +9,6 @@ const ContactProperty = ({ house }) => {
     const houses = useSelector((state) => state.houses.searchHouse);
     const searchHouses = useSelector((state) => state.houses.searchHouse);
     const guest = searchHouses.adult + searchHouses.child + searchHouses.babies;
-    console.log(guest);
     const handleReviewHouseRules = () => {
         navigate("/reviewHouseRules", {
             state: { house: house, searchHouses: searchHouses },

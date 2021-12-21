@@ -1,6 +1,7 @@
 import {
     ADDRESS,
     ADULT_MINUS,
+    ADULT_NULL,
     ADULT_PLUS,
     ARRIVAL_DATE,
     BABIES_Minus,
@@ -26,6 +27,12 @@ export function departureDateAction(departureDate) {
     return {
         type: DEPARTURE_DATE,
         payload: departureDate,
+    };
+}
+
+export function adultNull() {
+    return {
+        type: ADULT_NULL,
     };
 }
 

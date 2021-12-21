@@ -9,15 +9,29 @@ import {
     fetchRequest,
     fetchSuccess,
 } from "../../redux/action/houseAction";
-
-import { useLocation } from "react-router-dom";
+import {
+    addressAction,
+    adultNull,
+    arrivalDateAction,
+    departureDateAction,
+} from "../../redux/action/searchAction";
 
 const Listings = () => {
     const dispatch = useDispatch();
-    const { state } = useLocation();
     const houses = useSelector((state) => state.houses.houses);
     const searchHouse = useSelector((state) => state.houses.searchHouse);
     const guest = searchHouse.adult + searchHouse.child + searchHouse.babies;
+
+    const searchHouseResult = houses.filter((house) => {
+        return house.address === searchHouse.address;
+    });
+
+    const handleResetSearch = () => {
+        dispatch(addressAction(""));
+        dispatch(arrivalDateAction(""));
+        dispatch(departureDateAction(""));
+        dispatch(adultNull());
+    };
 
     useEffect(() => {
         dispatch(fetchRequest());
@@ -30,19 +44,34 @@ const Listings = () => {
         <div className='listings-container'>
             <MapDirections />
             <div className='listing-house-container'>
-                {state && (
-                    <p>
-                        Result For: {searchHouse.address} |{" "}
-                        {searchHouse.arrivalDate.toLocaleDateString()} -{" "}
-                        {searchHouse.departureDate.toLocaleDateString()} |{" "}
-                        {guest} Guest
-                    </p>
+                {searchHouse.address && guest && (
+                    <div className='search-result-cont'>
+                        <p className='search-result'>
+                            Result For: {searchHouse.address} |{" "}
+                            {searchHouse.arrivalDate.toLocaleDateString()} -{" "}
+                            {searchHouse.departureDate.toLocaleDateString()} |{" "}
+                            {guest} Guest
+                        </p>
+                        <button onClick={handleResetSearch}>
+                            Reset Search
+                        </button>
+                    </div>
                 )}
 
                 <div className='listing-house-cont'>
-                    {houses.map((house) => (
-                        <House key={house.id} house={house} />
-                    ))}
+                    {searchHouse.address && guest ? (
+                        searchHouseResult.length === 0 ? (
+                            <p>There is no home in this location</p>
+                        ) : (
+                            searchHouseResult.map((house) => (
+                                <House key={house.id} house={house} />
+                            ))
+                        )
+                    ) : (
+                        houses.map((house) => (
+                            <House key={house.id} house={house} />
+                        ))
+                    )}
                 </div>
             </div>
         </div>

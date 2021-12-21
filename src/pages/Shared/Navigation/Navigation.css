@@ -3,7 +3,7 @@
     color: #000 !important;
     position: fixed !important;
 
-    z-index: 10000;
+    z-index: 26 !important;
 }
 .navigation-link {
     text-decoration: none;

@@ -12,3 +12,11 @@ export const CHILD_MINUS = "CHILD_MINUS";
 export const CHILD_PLUS = "CHILD_PLUS";
 export const BABIES_Minus = "BABIES_Minus";
 export const BABIES_Plus = "BABIES_Plus";
+export const ADULT_NULL = "ADULT_NULL";
+export const CHILD_NULL = "CHILD_NULL";
+export const BABIES_NULL = "BABIES_NULL";
+
+// alert action variable
+export const SUCCESS_ALERT = "SUCCESS_ALERT";
+export const ERROR_ALERT = "ERROR_ALERT";
+export const INFO_ALERT = "INFO_ALERT";
