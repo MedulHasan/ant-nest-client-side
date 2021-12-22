@@ -1,11 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { BiRightArrowAlt } from "react-icons/bi";
+import { TextField, Stack } from "@mui/material";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import { useSelector, useDispatch } from "react-redux";
+// import { BiRightArrowAlt } from "react-icons/bi";
 import "./ContactProperty.css";
 import { useNavigate } from "react-router-dom";
+import { DesktopDatePicker } from "@mui/lab";
+const { arrivalDateAction, departureDateAction } =
+    "../../../redux/action/searchAction.js";
 
 const ContactProperty = ({ house }) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const houses = useSelector((state) => state.houses.searchHouse);
     const searchHouses = useSelector((state) => state.houses.searchHouse);
     const guest = searchHouses.adult + searchHouses.child + searchHouses.babies;
@@ -21,12 +28,34 @@ const ContactProperty = ({ house }) => {
             <div className='contact-room-info'>
                 <div>
                     <p>Dates</p>
-                    <div className='date-contact'>
-                        <p>{searchHouses.arrivalDate.toLocaleDateString()}</p>
-                        <p>
-                            <BiRightArrowAlt />
-                        </p>
-                        <p>{searchHouses.departureDate.toLocaleDateString()}</p>
+                    <div>
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                            <Stack className='contact-date'>
+                                <DesktopDatePicker
+                                    className='departure'
+                                    label='Arrival'
+                                    inputFormat='MM/dd/yyyy'
+                                    value={houses.arrivalDate}
+                                    onChange={(newValue) =>
+                                        dispatch(arrivalDateAction(newValue))
+                                    }
+                                    renderInput={(params) => (
+                                        <TextField {...params} />
+                                    )}
+                                />
+                                <DesktopDatePicker
+                                    label='Departure'
+                                    inputFormat='MM/dd/yyyy'
+                                    value={houses.departureDate}
+                                    onChange={(newValue) =>
+                                        dispatch(departureDateAction(newValue))
+                                    }
+                                    renderInput={(params) => (
+                                        <TextField {...params} />
+                                    )}
+                                />
+                            </Stack>
+                        </LocalizationProvider>
                     </div>
                 </div>
                 <div>

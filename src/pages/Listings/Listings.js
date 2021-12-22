@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import House from "../Home/House/House";
@@ -23,7 +24,12 @@ const Listings = () => {
     const guest = searchHouse.adult + searchHouse.child + searchHouse.babies;
 
     const searchHouseResult = houses.filter((house) => {
-        return house.address === searchHouse.address;
+        const result = house.address
+            .toLowerCase()
+            .includes(searchHouse.address.toLowerCase());
+        if (result) {
+            return house;
+        }
     });
 
     const handleResetSearch = () => {

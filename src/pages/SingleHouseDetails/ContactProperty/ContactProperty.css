@@ -55,3 +55,10 @@
     width: 100%;
     cursor: auto !important;
 }
+.contact-date {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row !important;
+    width: 313px !important;
+    column-gap: 5px;
+}
