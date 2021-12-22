@@ -21,8 +21,6 @@ import {
     departureDateAction,
 } from "../../../redux/action/searchAction";
 import { useNavigate } from "react-router-dom";
-import CustomAlert from "../../Shared/CustomAlert/CustomAlert";
-import { alertReducer } from "../../../redux/reducers/alertReducer";
 import { infoAlert } from "../../../redux/action/alertAction";
 
 const Banner = () => {
@@ -46,7 +44,6 @@ const Banner = () => {
                 <source src={banner} type='video/mp4' />
             </video>
             <div className='banner-container'>
-                <CustomAlert />
                 <p className='company-type'>Real Estate Searching Platform</p>
                 <Typography variant='h3' className='banner-title'>
                     Find The House of Your Dream Using Our Platform

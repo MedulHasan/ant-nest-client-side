@@ -1,0 +1,4 @@
+.confirm-payment {
+    display: flex;
+    justify-content: space-between;
+}

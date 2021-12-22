@@ -1,6 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import { BiRightArrowAlt } from "react-icons/bi";
+import Payment from "./Payment/Payment";
+import "./ConfirmPayment.css";
 
 const ConfirmPayment = () => {
     const { state } = useLocation();
@@ -8,16 +10,11 @@ const ConfirmPayment = () => {
         state.house;
     const { arrivalDate, departureDate, adult, child, babies } =
         state.searchHouses;
-    // const arrivalDateMonth = arrivalDate.toDateString().split(" ");
-    // const departureDateMonth = departureDate.toDateString().split(" ");
     return (
         <div className='review-house-rules-container'>
-            <div>
-                <h3 style={{ paddingBottom: "15px", fontSize: "25px" }}>
-                    Confirm Your Payment
-                </h3>
+            <div className='confirm-payment'>
+                <Payment totalPrice={price + cleaningFee + serviceFee} />
                 <div className='rules-container'>
-                    <div style={{ width: "40%" }}></div>
                     <div className='confarmation-info'>
                         <div
                             style={{

@@ -18,6 +18,7 @@ const initialState = {
     loading: false,
     houses: [],
     error: "",
+    paymentClientSecret: "",
     searchHouse: {
         address: "",
         arrivalDate: "",

@@ -41,9 +41,9 @@ function CustomAlert() {
                     sx={{ width: "100%" }}
                 >
                     {alertMsg.successAlert
-                        ? "successfully done"
+                        ? alertMsg.successMessage
                         : alertMsg.errorAlert
-                        ? "error occurred"
+                        ? alertMsg.errorMessage
                         : "information missing"}
                 </Alert>
             </Snackbar>

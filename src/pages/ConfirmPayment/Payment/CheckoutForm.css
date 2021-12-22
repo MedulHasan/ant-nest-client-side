@@ -1,0 +1,49 @@
+.payment-form {
+    border: 1px solid;
+    padding: 15px;
+    width: 400px;
+    border-radius: 4px;
+}
+.card-element {
+    border: 1px solid #bec8d2;
+    padding: 7px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.card-expire-cvc {
+    display: flex;
+    justify-content: space-between;
+}
+.expiry-cvc {
+    width: 195px;
+}
+.pay-btn {
+    border: 0;
+    padding: 8px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #2bde8c, #5ae866);
+}
+.payment-button {
+    text-align: right;
+    width: 100%;
+}
+.card-des {
+    font-size: 12px;
+    margin-bottom: 15px !important;
+}
+.payment-email {
+    width: 96%;
+    border-radius: 5px;
+    border: 1px solid #bec8d2;
+    padding: 7px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #bec8d2;
+}
+.payment-email:focus {
+    outline: none !important;
+    border: 1px solid #bec8d2;
+}

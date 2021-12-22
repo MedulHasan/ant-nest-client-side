@@ -9,12 +9,14 @@ import ConfirmPayment from "./pages/ConfirmPayment/ConfirmPayment";
 import Login from "./pages/SignIn/Login/Login";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./pages/SignIn/PrivateRoute/PrivateRoute";
+import CustomAlert from "./pages/Shared/CustomAlert/CustomAlert";
 
 function App() {
     return (
         <div className='App'>
             <AuthProvider>
                 <Navigation />
+                <CustomAlert />
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/listings' element={<Listings />} />

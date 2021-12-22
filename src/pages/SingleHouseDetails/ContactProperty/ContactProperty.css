@@ -62,3 +62,28 @@
     width: 313px !important;
     column-gap: 5px;
 }
+.guest-collect {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.adult-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.css-6hp17o-MuiList-root-MuiMenu-list {
+    padding: 0 !important;
+}
+.guest-count2 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root {
+    padding: 5px !important;
+}
+.adult-search2 {
+    margin: 10px 0px !important;
+    width: 180px !important;
+}

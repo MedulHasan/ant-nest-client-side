@@ -202,39 +202,6 @@ const Navigation = () => {
                             Listings
                         </NavLink>
                     </Box>
-
-                    {/* <Box sx={{ flexGrow: 0, marginLeft: "15px" }}>
-                        <Tooltip title='Open settings'>
-                            <IconButton
-                                onClick={handleOpenUserMenu}
-                                sx={{ p: 0 }}
-                            >
-                                <Avatar alt='Medul Hasan' src={user.photoURL} />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: "45px" }}
-                            id='menu-appbar'
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: "top",
-                                horizontal: "right",
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography textAlign='center'>
-                                    Logout
-                                </Typography>
-                            </MenuItem>
-                        </Menu>
-                    </Box> */}
                     <Box>
                         {!user.email && (
                             <NavLink

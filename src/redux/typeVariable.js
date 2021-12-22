@@ -20,3 +20,7 @@ export const BABIES_NULL = "BABIES_NULL";
 export const SUCCESS_ALERT = "SUCCESS_ALERT";
 export const ERROR_ALERT = "ERROR_ALERT";
 export const INFO_ALERT = "INFO_ALERT";
+
+// payment error
+export const PAYMENT_ERROR = "PAYMENT_ERROR";
+export const PAYMENT_CLIENT_SECRET = "PAYMENT_CLIENT_SECRET";
