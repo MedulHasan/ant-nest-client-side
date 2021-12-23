@@ -12,6 +12,7 @@ import {
     ARRIVAL_DATE,
     DEPARTURE_DATE,
     ADULT_NULL,
+    PAYMENT_CLIENT_SECRET,
 } from "../typeVariable";
 
 const initialState = {
@@ -33,7 +34,7 @@ function houseReducers(state = initialState, action) {
         case FETCH_REQUEST: {
             const newState = {
                 ...state,
-                loading: true,
+                loading: action.payload,
             };
             return newState;
         }
@@ -165,6 +166,13 @@ function houseReducers(state = initialState, action) {
                 },
             };
             return newBabies;
+        }
+        case PAYMENT_CLIENT_SECRET: {
+            const newData = {
+                ...state,
+                paymentClientSecret: action.payload,
+            };
+            return newData;
         }
         default:
             return state;

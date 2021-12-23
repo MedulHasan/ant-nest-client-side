@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 import "./Listings.css";
 import {
     fetchFailed,
-    fetchRequest,
+    loadingRequest,
     fetchSuccess,
 } from "../../redux/action/houseAction";
 import {
@@ -40,7 +40,7 @@ const Listings = () => {
     };
 
     useEffect(() => {
-        dispatch(fetchRequest());
+        dispatch(loadingRequest());
         fetch("./fakeData.json")
             .then((res) => res.json())
             .then((data) => dispatch(fetchSuccess(data)))

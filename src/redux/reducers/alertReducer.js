@@ -15,19 +15,27 @@ const alertReducer = (state = initialState, action) => {
             return {
                 ...state,
                 successAlert: action.payload,
+                errorAlert: false,
                 successMessage: action.successMsg,
+                errorMessage: "",
                 alertOpen: action.payload,
             };
         case ERROR_ALERT:
             return {
                 ...state,
+                successAlert: false,
                 errorAlert: action.payload,
+                successMessage: "",
                 errorMessage: action.errorMsg,
                 alertOpen: action.payload,
             };
         case INFO_ALERT:
             return {
                 ...state,
+                successAlert: false,
+                errorAlert: false,
+                successMessage: "",
+                errorMessage: "",
                 infoAlert: action.payload,
                 alertOpen: action.payload,
             };

@@ -3,25 +3,31 @@ import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import {
     fetchFailed,
-    fetchRequest,
+    loadingRequest,
     fetchSuccess,
 } from "../../../redux/action/houseAction";
 import House from "../House/House";
 import "./Offers.css";
 
 const Offers = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const houses = useSelector((state) => state.houses.houses);
 
     useEffect(() => {
-        dispatch(fetchRequest());
+        dispatch(loadingRequest());
         fetch("./fakeData.json")
             .then((res) => res.json())
             .then((data) => dispatch(fetchSuccess(data)))
             .catch((error) => dispatch(fetchFailed(error.message)));
     }, [dispatch]);
+
+    const handleViewAllProduct = () => {
+        navigate("/listings");
+    };
 
     return (
         <div className='offers-container'>
@@ -39,6 +45,7 @@ const Offers = () => {
                     className='view-all-properties'
                     variant='contained'
                     size='small'
+                    onClick={handleViewAllProduct}
                 >
                     View All Properties
                 </Button>

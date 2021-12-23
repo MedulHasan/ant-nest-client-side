@@ -10,6 +10,7 @@ import Login from "./pages/SignIn/Login/Login";
 import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./pages/SignIn/PrivateRoute/PrivateRoute";
 import CustomAlert from "./pages/Shared/CustomAlert/CustomAlert";
+import AddListing from "./pages/AddListing/AddListing";
 
 function App() {
     return (
@@ -41,6 +42,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <ConfirmPayment />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path='/add-listing'
+                        element={
+                            <PrivateRoute>
+                                <AddListing />
                             </PrivateRoute>
                         }
                     />

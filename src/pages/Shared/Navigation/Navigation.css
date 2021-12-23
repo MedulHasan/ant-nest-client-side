@@ -22,3 +22,21 @@
     align-items: center;
     margin: 0 10px !important;
 }
+.add-listing-btn {
+    padding: 5px 10px;
+    background-color: #3d6dfd;
+    color: #fff !important;
+    border-radius: 5px;
+    display: flex !important;
+    align-items: center;
+    column-gap: 7px;
+}
+.add-listing-btn:hover {
+    color: #fff !important;
+    background-image: linear-gradient(to right, #3d6dfd, #56c2fa);
+}
+.add-listing-icon {
+    font-size: 22px;
+    border-radius: 50%;
+    background-color: #6795fd;
+}

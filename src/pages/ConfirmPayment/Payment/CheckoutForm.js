@@ -5,16 +5,26 @@ import {
     useElements,
     useStripe,
 } from "@stripe/react-stripe-js";
+import { CircularProgress } from "@mui/material";
 import React, { useEffect } from "react";
 import { FaCcMastercard } from "react-icons/fa";
 import { RiVisaFill } from "react-icons/ri";
 import { SiAmericanexpress } from "react-icons/si";
 import { useDispatch } from "react-redux";
-import { errorAlert } from "../../../redux/action/alertAction";
+import { errorAlert, successAlert } from "../../../redux/action/alertAction";
+import {
+    fetchPaymentClientSecret,
+    loadingRequest,
+} from "../../../redux/action/houseAction";
+import useAuth from "../../../hooks/useAuth";
 import "./CheckoutForm.css";
+import { useSelector } from "react-redux";
 
 const CheckoutForm = ({ totalPrice }) => {
+    const { user } = useAuth();
     const dispatch = useDispatch();
+    const houses = useSelector((state) => state.houses);
+
     const stripe = useStripe();
     const elements = useElements();
 
@@ -27,8 +37,10 @@ const CheckoutForm = ({ totalPrice }) => {
             body: JSON.stringify({ totalPrice }),
         })
             .then((res) => res.json())
-            .then((data) => console.log(data));
-    }, [totalPrice]);
+            .then((data) =>
+                dispatch(fetchPaymentClientSecret(data.clientSecret))
+            );
+    }, [totalPrice, dispatch]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -47,16 +59,36 @@ const CheckoutForm = ({ totalPrice }) => {
             return;
         }
 
+        dispatch(loadingRequest(true));
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: "card",
             card,
         });
 
         if (error) {
+            console.log(error);
             dispatch(errorAlert(true, error.message));
+            dispatch(loadingRequest(false));
         } else {
-            dispatch(errorAlert(false, ""));
-            console.log(paymentMethod);
+            const { paymentIntent, errorIntent } =
+                await stripe.confirmCardPayment(houses.paymentClientSecret, {
+                    payment_method: {
+                        card: card,
+                        billing_details: {
+                            name: user.displayName,
+                            email: user.email,
+                        },
+                    },
+                });
+            if (errorIntent) {
+                dispatch(errorAlert(true, errorIntent.message));
+                dispatch(loadingRequest(false));
+                console.log(errorIntent.message);
+            } else {
+                dispatch(successAlert(true, "Your Payment successfully done!"));
+                dispatch(loadingRequest(false));
+                console.log(paymentIntent);
+            }
         }
     };
     return (
@@ -162,13 +194,17 @@ const CheckoutForm = ({ totalPrice }) => {
                     </div>
                 </div>
                 <div className='payment-button'>
-                    <button
-                        className='pay-btn'
-                        type='submit'
-                        disabled={!stripe}
-                    >
-                        Continue to Pay
-                    </button>
+                    {houses.loading ? (
+                        <CircularProgress />
+                    ) : (
+                        <button
+                            className='pay-btn'
+                            type='submit'
+                            disabled={!stripe}
+                        >
+                            Continue to Pay
+                        </button>
+                    )}
                 </div>
             </form>
         </div>

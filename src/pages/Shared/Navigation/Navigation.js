@@ -17,6 +17,7 @@ import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import { MdLogout } from "react-icons/md";
+import { IoIosAdd } from "react-icons/io";
 
 const Navigation = () => {
     const { user, logout } = useAuth();
@@ -202,8 +203,8 @@ const Navigation = () => {
                             Listings
                         </NavLink>
                     </Box>
-                    <Box>
-                        {!user.email && (
+                    {!user.email && (
+                        <Box>
                             <NavLink
                                 className='navigation-link'
                                 style={({ isActive }) => {
@@ -222,11 +223,11 @@ const Navigation = () => {
                                     </span>
                                 </div>
                             </NavLink>
-                        )}
-                    </Box>
+                        </Box>
+                    )}
 
                     {user.email && (
-                        <Box sx={{ flexGrow: 0, marginLeft: "15px" }}>
+                        <Box sx={{ flexGrow: 0, margin: "0 15px" }}>
                             <Tooltip title='Open settings'>
                                 <IconButton
                                     onClick={handleOpenUserMenu}
@@ -273,6 +274,22 @@ const Navigation = () => {
                                 </MenuItem>
                             </Menu>
                         </Box>
+                    )}
+                    {user.email && (
+                        <NavLink
+                            className='navigation-link add-listing-btn'
+                            style={({ isActive }) => {
+                                return {
+                                    display: "block",
+                                    margin: "1rem 0",
+                                    color: isActive ? "#6191FD" : "#000",
+                                };
+                            }}
+                            to='/add-listing'
+                        >
+                            <IoIosAdd className='add-listing-icon' />
+                            <span>Add Listing</span>
+                        </NavLink>
                     )}
                 </Toolbar>
             </Container>
