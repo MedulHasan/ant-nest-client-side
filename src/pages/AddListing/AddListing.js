@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./AddListing.css";
 import useAuth from "../../hooks/useAuth";
-import { MenuItem, TextField } from "@mui/material";
-import { BsInfo } from "react-icons/bs";
+import { CircularProgress, MenuItem, TextField } from "@mui/material";
+import { BsInfo, BsCardImage } from "react-icons/bs";
 import { ImLocation2 } from "react-icons/im";
 import { BiDetail } from "react-icons/bi";
-import { DropzoneArea } from "material-ui-dropzone";
-import "@material-ui/styles";
+import { AiOutlineCloudUpload } from "react-icons/ai";
+import { useDropzone } from "react-dropzone";
+import { loadingRequest } from "../../redux/action/houseAction";
+import { errorAlert, successAlert } from "../../redux/action/alertAction";
 const types = [
     {
         value: "House",
@@ -24,11 +27,77 @@ const types = [
 
 const AddListing = () => {
     const { user } = useAuth();
+    const [type, setType] = useState("House");
+    const [images, setImages] = useState([]);
+    const [houseData, setHouseData] = useState({});
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [website, setWebsite] = useState("");
+    const dispatch = useDispatch();
+    const houses = useSelector((state) => state.houses);
 
-    const [type, setType] = React.useState("House");
+    const onDrop = useCallback((acceptedFile, rejectedFile) => {
+        acceptedFile.forEach((file) => {
+            // convert to base64
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+                setImages((prevState) => [...prevState, reader.result]);
+            };
+            //
+        });
+    }, []);
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({
+        onDrop,
+        accept: "image/*",
+        maxFiles: 5,
+    });
 
     const handleChange = (event) => {
         setType(event.target.value);
+    };
+
+    const handleHouseInfo = (e) => {
+        e.preventDefault();
+        let newData = { ...houseData };
+        newData[e.target.name] = e.target.value;
+        setHouseData(newData);
+    };
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        let landlord = {};
+        landlord.email = email;
+        landlord.phone = phone;
+        landlord.website = website;
+        landlord.name = user.displayName;
+        landlord.imageURL = user.photoURL;
+        houseData.landlord = landlord;
+        dispatch(loadingRequest(true));
+        fetch("http://localhost:8888/add-listing", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({ houseData: houseData, images: images }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.insertedId) {
+                    dispatch(
+                        successAlert(true, "Your Listing Added Successfully!")
+                    );
+                    dispatch(loadingRequest(false));
+                    setImages([]);
+                    e.target.reset();
+                }
+            })
+            .catch((err) => {
+                dispatch(errorAlert(true, "Your Listing Added failed!"));
+                console.log(err.message);
+                dispatch(loadingRequest(false));
+            });
     };
 
     return (
@@ -46,7 +115,7 @@ const AddListing = () => {
                 </div>
             </div>
 
-            <form>
+            <form onSubmit={handleFormSubmit}>
                 <div className='basic-info-container'>
                     <p className='basic-info'>
                         <BsInfo
@@ -59,6 +128,8 @@ const AddListing = () => {
                             className='basic-info-input'
                             label='Listing Title'
                             size='small'
+                            name='houseTitle'
+                            onBlur={handleHouseInfo}
                         />
                         <TextField
                             className='basic-info-input'
@@ -67,6 +138,8 @@ const AddListing = () => {
                             size='small'
                             value={type}
                             onChange={handleChange}
+                            name='type'
+                            onBlur={handleHouseInfo}
                         >
                             {types.map((option) => (
                                 <MenuItem
@@ -81,6 +154,8 @@ const AddListing = () => {
                             className='basic-info-input'
                             label='Price'
                             size='small'
+                            name='price'
+                            onBlur={handleHouseInfo}
                         />
                     </div>
                     <div className='basic-info-input-cont'>
@@ -88,11 +163,15 @@ const AddListing = () => {
                             className='basic-info-input'
                             label='Cleaning Fee'
                             size='small'
+                            name='cleaningFee'
+                            onBlur={handleHouseInfo}
                         />
                         <TextField
                             className='basic-info-input'
                             label='Service Fee'
                             size='small'
+                            name='serviceFee'
+                            onBlur={handleHouseInfo}
                         />
                         <span className='basic-info-input'></span>
                     </div>
@@ -113,16 +192,22 @@ const AddListing = () => {
                             className='basic-info-input'
                             label='Address'
                             size='small'
+                            name='address'
+                            onBlur={handleHouseInfo}
                         />
                         <TextField
                             className='basic-info-input'
                             label='City'
                             size='small'
+                            name='city'
+                            onBlur={handleHouseInfo}
                         />
                         <TextField
                             className='basic-info-input'
                             label='Email'
                             size='small'
+                            name='email'
+                            onBlur={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div className='basic-info-input-cont'>
@@ -130,11 +215,15 @@ const AddListing = () => {
                             className='basic-info-input'
                             label='Website'
                             size='small'
+                            name='website'
+                            onBlur={(e) => setWebsite(e.target.value)}
                         />
                         <TextField
                             className='basic-info-input'
                             label='Phone'
                             size='small'
+                            name='phone'
+                            onBlur={(e) => setPhone(e.target.value)}
                         />
                         <span className='basic-info-input'></span>
                     </div>
@@ -156,16 +245,22 @@ const AddListing = () => {
                                 className='basic-info-input'
                                 label='Bedrooms'
                                 size='small'
+                                name='bedRooms'
+                                onBlur={handleHouseInfo}
                             />
                             <TextField
                                 className='basic-info-input'
                                 label='Bathrooms'
                                 size='small'
+                                name='bathRooms'
+                                onBlur={handleHouseInfo}
                             />
                             <TextField
                                 className='basic-info-input'
                                 label='Max Guest'
                                 size='small'
+                                name='guest'
+                                onBlur={handleHouseInfo}
                             />
                         </div>
                         <div className='basic-info-input-cont'>
@@ -173,6 +268,8 @@ const AddListing = () => {
                                 className='basic-info-input'
                                 label='Details Text'
                                 size='small'
+                                name='details'
+                                onBlur={handleHouseInfo}
                                 multiline
                                 rows={6}
                                 style={{
@@ -184,25 +281,67 @@ const AddListing = () => {
                 </div>
                 <div className='basic-info-container'>
                     <p className='basic-info'>
-                        <BiDetail
+                        <BsCardImage
                             style={{
                                 fontSize: "18px",
                                 color: "#3572FC",
                                 marginRight: "10px",
                             }}
                         />
-                        <span>Listing Details</span>
+                        <span>Header Media</span>
                     </p>
                     <div className='basic-info-input-cont'>
-                        <DropzoneArea
-                            acceptedFiles={["image/*"]}
-                            dropzoneText={
-                                "Click here or drop an image here to upload"
-                            }
-                            onChange={(files) => console.log("Files:", files)}
-                        />
+                        <div className='dropzone' {...getRootProps()}>
+                            <div
+                                style={{
+                                    textAlign: "center",
+                                    color: "#A59999",
+                                }}
+                            >
+                                <input {...getInputProps()} />
+                                <AiOutlineCloudUpload
+                                    style={{
+                                        fontSize: "40px",
+                                        color: "#3572fc",
+                                    }}
+                                />
+                                {isDragActive ? (
+                                    <p>Drag Active</p>
+                                ) : (
+                                    <>
+                                        <p>
+                                            Click here or drop files to upload
+                                        </p>
+                                        <em>you can upload must 5 images</em>
+                                    </>
+                                )}
+                                {images.length > 0 && (
+                                    <div>
+                                        {images.map((image, index) => (
+                                            <img
+                                                className='selected-image'
+                                                src={image}
+                                                key={index}
+                                                alt=''
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
+                {images.length > 0 && (
+                    <button className='save-change-listing' type='submit'>
+                        {houses.loading ? (
+                            <CircularProgress
+                                style={{ fontSize: "7px", color: "#fff" }}
+                            />
+                        ) : (
+                            "Save Change"
+                        )}
+                    </button>
+                )}
             </form>
         </div>
     );

@@ -19,7 +19,7 @@ const Offers = () => {
 
     useEffect(() => {
         dispatch(loadingRequest());
-        fetch("./fakeData.json")
+        fetch("http://localhost:8888/add-listing")
             .then((res) => res.json())
             .then((data) => dispatch(fetchSuccess(data)))
             .catch((error) => dispatch(fetchFailed(error.message)));

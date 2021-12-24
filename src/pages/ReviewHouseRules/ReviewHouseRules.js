@@ -10,6 +10,8 @@ const ReviewHouseRules = () => {
     const { state } = useLocation();
     const { houseTitle, price, cleaningFee, serviceFee, image, type, address } =
         state.house;
+    const totalPrice =
+        parseInt(price) + parseInt(cleaningFee) + parseInt(serviceFee);
     const { arrivalDate, departureDate, adult, child, babies } =
         state.searchHouses;
     const arrivalDateMonth = arrivalDate.toDateString().split(" ");
@@ -173,7 +175,7 @@ const ReviewHouseRules = () => {
                         </div>
                         <div className='data-price total-price'>
                             <p>Total Price</p>
-                            <p>$ {price + cleaningFee + serviceFee}</p>
+                            <p>$ {totalPrice}</p>
                         </div>
                     </div>
                 </div>

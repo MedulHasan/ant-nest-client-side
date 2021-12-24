@@ -92,7 +92,7 @@ const House = ({ house }) => {
                     <Rating
                         className='ratting'
                         name='read-only'
-                        value={parseInt(ratting)}
+                        value={4}
                         readOnly
                     />
                 </Box>

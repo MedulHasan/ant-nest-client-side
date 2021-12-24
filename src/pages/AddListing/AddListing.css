@@ -51,3 +51,28 @@
     margin: 0 5%;
     margin-top: 25px;
 }
+.dropzone {
+    border: 2px dotted #3572fc;
+    height: 250px;
+    background-color: #f7f9fb;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.selected-image {
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+}
+.save-change-listing {
+    margin-top: 15px;
+    border: 0;
+    padding: 10px 15px;
+    background-color: #3572fc;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}

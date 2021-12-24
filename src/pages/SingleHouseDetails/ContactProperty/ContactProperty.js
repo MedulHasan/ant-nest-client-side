@@ -28,6 +28,10 @@ const ContactProperty = ({ house }) => {
     const houses = useSelector((state) => state.houses.searchHouse);
     const searchHouses = useSelector((state) => state.houses.searchHouse);
     const guest = searchHouses.adult + searchHouses.child + searchHouses.babies;
+    const totalPrice =
+        parseInt(house.price) +
+        parseInt(house.cleaningFee) +
+        parseInt(house.serviceFee);
 
     const handleReviewHouseRules = () => {
         navigate("/reviewHouseRules", {
@@ -233,9 +237,7 @@ const ContactProperty = ({ house }) => {
 
                 <div className='data-price total-price'>
                     <p>Total Price</p>
-                    <p>
-                        $ {house.price + house.cleaningFee + house.serviceFee}
-                    </p>
+                    <p>$ {totalPrice}</p>
                 </div>
                 <button
                     style={{

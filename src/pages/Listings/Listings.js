@@ -40,8 +40,8 @@ const Listings = () => {
     };
 
     useEffect(() => {
-        dispatch(loadingRequest());
-        fetch("./fakeData.json")
+        dispatch(loadingRequest(true));
+        fetch("http://localhost:8888/add-listing")
             .then((res) => res.json())
             .then((data) => dispatch(fetchSuccess(data)))
             .catch((error) => dispatch(fetchFailed(error.message)));

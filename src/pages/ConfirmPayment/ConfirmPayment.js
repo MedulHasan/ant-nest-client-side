@@ -8,12 +8,14 @@ const ConfirmPayment = () => {
     const { state } = useLocation();
     const { houseTitle, price, cleaningFee, serviceFee, image, type, address } =
         state.house;
+    const totalPrice =
+        parseInt(price) + parseInt(cleaningFee) + parseInt(serviceFee);
     const { arrivalDate, departureDate, adult, child, babies } =
         state.searchHouses;
     return (
         <div className='review-house-rules-container'>
             <div className='confirm-payment'>
-                <Payment totalPrice={price + cleaningFee + serviceFee} />
+                <Payment totalPrice={totalPrice} />
                 <div className='rules-container'>
                     <div className='confarmation-info'>
                         <div
@@ -67,7 +69,7 @@ const ConfirmPayment = () => {
                         </div>
                         <div className='data-price total-price'>
                             <p>Total Price</p>
-                            <p>$ {price + cleaningFee + serviceFee}</p>
+                            <p>$ {totalPrice}</p>
                         </div>
                     </div>
                 </div>

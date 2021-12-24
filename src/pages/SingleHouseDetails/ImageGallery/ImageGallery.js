@@ -58,14 +58,18 @@ const ImageGallery = ({ image }) => {
                                 />
                             )}
                         </Item>
-                        <Item original={image.img2} width='1024' height='768'>
+                        <Item
+                            original={image.img5 || ""}
+                            width='1024'
+                            height='768'
+                        >
                             {({ ref, open }) => (
                                 <img
                                     height='173px'
                                     width='173px'
                                     ref={ref}
                                     onClick={open}
-                                    src={image.img2}
+                                    src={image.img5 || ""}
                                     alt=''
                                 />
                             )}
