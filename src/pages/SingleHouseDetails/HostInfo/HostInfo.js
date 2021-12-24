@@ -34,23 +34,23 @@ const HostInfo = ({ house }) => {
                     <div className='host-phone'>
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <MdPhoneEnabled />
-                            <span style={{ marginLeft: "5px" }}>Phone :</span>
+                            <span style={{ marginLeft: "5px" }}>Phone:</span>
                         </div>
-                        <p>+7(123589654)</p>
+                        <p>{house.landlord.phone}</p>
                     </div>
                     <div className='host-phone'>
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <FaRegEnvelope />
-                            <span style={{ marginLeft: "5px" }}>Mail :</span>
+                            <span style={{ marginLeft: "5px" }}>Mail:</span>
                         </div>
-                        <p>medul.cse@gmail.com</p>
+                        <p>{house.landlord.email}</p>
                     </div>
                     <div className='host-phone'>
                         <div style={{ display: "flex", alignItems: "center" }}>
                             <CgWebsite />
-                            <span style={{ marginLeft: "5px" }}>Website :</span>
+                            <span style={{ marginLeft: "5px" }}>Website:</span>
                         </div>
-                        <p>medul.netlify.app</p>
+                        <p>{house.landlord.website}</p>
                     </div>
                 </div>
                 <button
