@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
     CardCvcElement,
     CardExpiryElement,
@@ -29,7 +30,7 @@ const CheckoutForm = ({ totalPrice }) => {
     const elements = useElements();
 
     useEffect(() => {
-        fetch("http://localhost:8888/create-payment-intent", {
+        fetch("https://ants-nest.herokuapp.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

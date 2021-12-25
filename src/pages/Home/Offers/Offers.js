@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, CircularProgress, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -19,7 +19,7 @@ const Offers = () => {
 
     useEffect(() => {
         dispatch(loadingRequest());
-        fetch("http://localhost:8888/add-listing")
+        fetch("https://ants-nest.herokuapp.com/add-listing")
             .then((res) => res.json())
             .then((data) => dispatch(fetchSuccess(data)))
             .catch((error) => dispatch(fetchFailed(error.message)));
@@ -37,9 +37,13 @@ const Offers = () => {
                     Latest Properties
                 </Typography>
                 <Box className='card-container'>
-                    {houses.map((house) => (
-                        <House key={house.id} house={house} />
-                    ))}
+                    {houses.length === 0 ? (
+                        <CircularProgress className='progress' />
+                    ) : (
+                        houses.map((house) => (
+                            <House key={house._id} house={house} />
+                        ))
+                    )}
                 </Box>
                 <Button
                     className='view-all-properties'

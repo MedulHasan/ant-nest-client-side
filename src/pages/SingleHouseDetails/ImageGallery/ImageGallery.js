@@ -9,7 +9,12 @@ const ImageGallery = ({ image }) => {
         <div className='single-home-page-image-galary-container'>
             <Gallery>
                 <div className='single-image-galary-container'>
-                    <Item original={image.img1} width='1024' height='768'>
+                    <Item
+                        thumbnail={image.img1}
+                        original={image.img1}
+                        width='1024'
+                        height='768'
+                    >
                         {({ ref, open }) => (
                             <img
                                 height='400px'
@@ -22,7 +27,12 @@ const ImageGallery = ({ image }) => {
                         )}
                     </Item>
                     <div className='image-galary'>
-                        <Item original={image.img2} width='1024' height='768'>
+                        <Item
+                            thumbnail={image.img2}
+                            original={image.img2}
+                            width='1024'
+                            height='768'
+                        >
                             {({ ref, open }) => (
                                 <img
                                     height='173px'
@@ -34,7 +44,12 @@ const ImageGallery = ({ image }) => {
                                 />
                             )}
                         </Item>
-                        <Item original={image.img3} width='1024' height='768'>
+                        <Item
+                            thumbnail={image.img3}
+                            original={image.img3}
+                            width='1024'
+                            height='768'
+                        >
                             {({ ref, open }) => (
                                 <img
                                     height='173px'
@@ -46,7 +61,12 @@ const ImageGallery = ({ image }) => {
                                 />
                             )}
                         </Item>
-                        <Item original={image.img4} width='1024' height='768'>
+                        <Item
+                            thumbnail={image.img4}
+                            original={image.img4}
+                            width='1024'
+                            height='768'
+                        >
                             {({ ref, open }) => (
                                 <img
                                     height='173px'
@@ -59,6 +79,7 @@ const ImageGallery = ({ image }) => {
                             )}
                         </Item>
                         <Item
+                            thumbnail={image.img5}
                             original={image.img5 || ""}
                             width='1024'
                             height='768'

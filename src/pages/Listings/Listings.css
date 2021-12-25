@@ -27,3 +27,6 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.progress {
+    text-align: center;
+}

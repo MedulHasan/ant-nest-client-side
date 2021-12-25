@@ -16,6 +16,7 @@ import {
     arrivalDateAction,
     departureDateAction,
 } from "../../redux/action/searchAction";
+import { CircularProgress } from "@mui/material";
 
 const Listings = () => {
     const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const Listings = () => {
 
     useEffect(() => {
         dispatch(loadingRequest(true));
-        fetch("http://localhost:8888/add-listing")
+        fetch("https://ants-nest.herokuapp.com/add-listing")
             .then((res) => res.json())
             .then((data) => dispatch(fetchSuccess(data)))
             .catch((error) => dispatch(fetchFailed(error.message)));
@@ -73,9 +74,11 @@ const Listings = () => {
                                 <House key={house.id} house={house} />
                             ))
                         )
+                    ) : houses.length === 0 ? (
+                        <CircularProgress className="progress" />
                     ) : (
                         houses.map((house) => (
-                            <House key={house.id} house={house} />
+                            <House key={house._id} house={house} />
                         ))
                     )}
                 </div>

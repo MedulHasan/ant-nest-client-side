@@ -156,7 +156,7 @@ const useFirebase = () => {
         formData.append("fullName", fullName);
         formData.append("email", email);
         formData.append("imageURL", imageURL);
-        fetch("http://localhost:8888/user", {
+        fetch("https://ants-nest.herokuapp.com/user", {
             method,
             body: formData,
         })

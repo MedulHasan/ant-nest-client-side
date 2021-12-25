@@ -75,7 +75,7 @@ const AddListing = () => {
         landlord.imageURL = user.photoURL;
         houseData.landlord = landlord;
         dispatch(loadingRequest(true));
-        fetch("http://localhost:8888/add-listing", {
+        fetch("https://ants-nest.herokuapp.com/add-listing", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
