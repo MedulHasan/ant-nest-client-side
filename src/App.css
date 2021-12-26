@@ -8,6 +8,7 @@
     top: 9%;
     bottom: 0;
     width: 45%;
+    height: 100vh;
 }
 .marker {
     background-image: url("./image/mapMarker.png");
@@ -25,4 +26,11 @@
 .mapboxgl-popup-content {
     text-align: center;
     font-family: "Open Sans", sans-serif;
+}
+
+@media screen and (max-width: 900px) {
+    #map {
+        position: static;
+        width: 95vw;
+    }
 }

@@ -4,8 +4,6 @@
 }
 #myVideo {
     object-fit: cover;
-    /* right: 0;
-    bottom: 0; */
     width: 98.9vw;
     height: 85vh;
     opacity: 0.8;
@@ -26,7 +24,6 @@
     position: absolute;
     top: 100px;
     right: 50px;
-    /* border: 1px solid; */
     padding: 10px;
     border-radius: 5px;
     background-color: rgb(255, 255, 255, 0.5);
@@ -78,4 +75,24 @@
 }
 .adult-search {
     margin-bottom: 10px !important;
+}
+@media screen and (max-width: 600px) {
+    .banner-container {
+        top: -100px;
+        left: 75px;
+    }
+    .search-container {
+        top: 250px;
+        left: 100px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .banner-container {
+        top: -100px;
+        left: 15px;
+    }
+    .search-container {
+        top: 250px;
+        left: 15px;
+    }
 }

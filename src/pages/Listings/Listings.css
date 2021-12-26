@@ -3,7 +3,6 @@
 }
 .listing-house-container {
     margin-top: 6% !important;
-
     margin-left: auto;
 }
 .listing-house-cont {
@@ -29,4 +28,51 @@
 }
 .progress {
     text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+    .listing-house-cont {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .listing-house-container {
+        margin-top: 8% !important;
+        margin-right: 7%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .listing-house-cont {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .listing-house-container {
+        margin-top: 105vh !important;
+        margin-left: -85vw;
+    }
+}
+@media screen and (max-width: 800px) {
+    .listing-house-container {
+        margin-left: -90vw;
+    }
+}
+@media screen and (max-width: 700px) {
+    .listing-house-container {
+        margin-left: -93vw;
+    }
+}
+@media screen and (max-width: 600px) {
+    .listing-house-cont {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .listing-house-container {
+        margin-left: -84vw;
+    }
+}
+@media screen and (max-width: 500px) {
+    .listing-house-container {
+        margin-left: -90vw;
+    }
+}
+@media screen and (max-width: 400px) {
+    .listing-house-container {
+        margin-left: -95vw;
+    }
 }

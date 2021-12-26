@@ -3,3 +3,82 @@
     flex-direction: row;
     gap: 8px;
 }
+.image-gallery-thumbnail {
+    height: 400px;
+    width: 715px;
+}
+.image-gallery-partial {
+    height: 173px;
+    width: 173px;
+}
+
+@media screen and (max-width: 1100px) {
+    .image-gallery-thumbnail {
+        height: 400px;
+        width: 615px;
+    }
+    .image-gallery-partial {
+        height: 148px;
+        width: 148px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .image-gallery-thumbnail {
+        height: 400px;
+        width: 515px;
+    }
+    .image-gallery-partial {
+        height: 123px;
+        width: 123px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .image-gallery-thumbnail {
+        height: 400px;
+        width: 715px;
+    }
+    .image-gallery-partial {
+        height: 173px;
+        width: 173px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .image-gallery-thumbnail {
+        height: 400px;
+        width: 665px;
+    }
+    .image-gallery-partial {
+        height: 160px;
+        width: 160px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .image-gallery-thumbnail {
+        height: 400px;
+        width: 580px;
+    }
+    .image-gallery-partial {
+        height: 139px;
+        width: 139px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .image-gallery-thumbnail {
+        height: 400px;
+        width: 480px;
+    }
+    .image-gallery-partial {
+        height: 114px;
+        width: 114px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .image-gallery-thumbnail {
+        height: 300px;
+        width: 395px;
+    }
+    .image-gallery-partial {
+        height: 101px;
+        width: 101px;
+    }
+}

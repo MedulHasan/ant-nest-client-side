@@ -17,8 +17,7 @@ const ImageGallery = ({ image }) => {
                     >
                         {({ ref, open }) => (
                             <img
-                                height='400px'
-                                width='715px'
+                                className='image-gallery-thumbnail'
                                 ref={ref}
                                 onClick={open}
                                 src={image.img1}
@@ -35,8 +34,7 @@ const ImageGallery = ({ image }) => {
                         >
                             {({ ref, open }) => (
                                 <img
-                                    height='173px'
-                                    width='173px'
+                                    className='image-gallery-partial'
                                     ref={ref}
                                     onClick={open}
                                     src={image.img2}
@@ -52,8 +50,7 @@ const ImageGallery = ({ image }) => {
                         >
                             {({ ref, open }) => (
                                 <img
-                                    height='173px'
-                                    width='173px'
+                                    className='image-gallery-partial'
                                     ref={ref}
                                     onClick={open}
                                     src={image.img3}
@@ -69,8 +66,7 @@ const ImageGallery = ({ image }) => {
                         >
                             {({ ref, open }) => (
                                 <img
-                                    height='173px'
-                                    width='173px'
+                                    className='image-gallery-partial'
                                     ref={ref}
                                     onClick={open}
                                     src={image.img4}
@@ -86,8 +82,7 @@ const ImageGallery = ({ image }) => {
                         >
                             {({ ref, open }) => (
                                 <img
-                                    height='173px'
-                                    width='173px'
+                                    className='image-gallery-partial'
                                     ref={ref}
                                     onClick={open}
                                     src={image.img5 || ""}

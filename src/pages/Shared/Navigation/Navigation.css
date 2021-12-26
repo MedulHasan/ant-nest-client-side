@@ -40,3 +40,8 @@
     border-radius: 50%;
     background-color: #6795fd;
 }
+@media screen and (max-width: 400px) {
+    .none-400 {
+        display: none;
+    }
+}

@@ -13,7 +13,7 @@ const ConfirmPayment = () => {
     const { arrivalDate, departureDate, adult, child, babies } =
         state.searchHouses;
     return (
-        <div className='review-house-rules-container'>
+        <div className='review-house-rules-container review-house-rules-container2'>
             <div className='confirm-payment'>
                 <Payment totalPrice={totalPrice} />
                 <div className='rules-container'>

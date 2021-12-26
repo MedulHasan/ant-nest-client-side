@@ -43,3 +43,24 @@ p {
     padding: 15px;
     border-radius: 8px;
 }
+.house-rules {
+    width: 40%;
+}
+.check-in-time {
+    display: flex;
+    justify-content: space-between;
+}
+@media screen and (max-width: 1000px) {
+    .rules-container {
+        flex-wrap: wrap-reverse;
+        gap: 25px;
+    }
+    .house-rules {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .check-in-time {
+        flex-direction: column;
+    }
+}

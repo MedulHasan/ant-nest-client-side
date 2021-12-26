@@ -31,11 +31,13 @@ const Offers = () => {
 
     return (
         <div className='offers-container'>
-            <Box>
-                <p className='browser-offer'>BROWSE HOT OFFERS</p>
-                <Typography className='latest-property-text'>
-                    Latest Properties
-                </Typography>
+            <Box className='offer-cont'>
+                <div className='hot-off'>
+                    <p className='browser-offer'>BROWSE HOT OFFERS</p>
+                    <Typography className='latest-property-text'>
+                        Latest Properties
+                    </Typography>
+                </div>
                 <Box className='card-container'>
                     {houses.length === 0 ? (
                         <CircularProgress className='progress' />

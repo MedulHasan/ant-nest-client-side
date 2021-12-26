@@ -76,3 +76,59 @@
     cursor: pointer;
     font-size: 14px;
 }
+.text-area-input {
+    width: 600px;
+}
+.bed-bath-guest {
+    width: 250px;
+}
+.bed-bath-details {
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width: 900px) {
+    .text-area-input {
+        width: 300px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .add-listing-container {
+        padding: 12% 10%;
+    }
+    .bed-bath-guest {
+        width: 230px;
+    }
+    .text-area-input {
+        width: 280px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .add-listing-container {
+        padding: 15% 10%;
+    }
+    .basic-info-input-cont {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px !important;
+    }
+    .basic-info-input {
+        width: 95%;
+    }
+    .bed-bath-guest {
+        width: 180px;
+    }
+    .text-area-input {
+        width: 210px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .bed-bath-guest {
+        width: 300px;
+    }
+    .text-area-input {
+        width: 300px;
+    }
+    .bed-bath-details {
+        flex-direction: column;
+    }
+}

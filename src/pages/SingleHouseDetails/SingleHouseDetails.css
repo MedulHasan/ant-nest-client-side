@@ -67,4 +67,37 @@ p {
 }
 .single-other-container {
     width: 48vw;
+    margin-bottom: 4%;
+}
+
+@media screen and (max-width: 1200px) {
+    .image-info-cont {
+        left: 10%;
+        bottom: 55%;
+    }
+    .single-home-bookmark {
+        right: 10%;
+        bottom: 55%;
+    }
+    .single-home-share {
+        right: 10%;
+        bottom: 60%;
+    }
+    .single-other-cont {
+        padding: 5% 2%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .single-other-cont {
+        flex-direction: column;
+        padding: 3% 8%;
+    }
+    .single-other-container {
+        width: 99%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .single-other-cont {
+        padding: 3% 2%;
+    }
 }

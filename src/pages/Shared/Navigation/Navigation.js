@@ -61,6 +61,7 @@ const Navigation = () => {
                             alt=''
                         />
                         <Typography
+                            className='none-400'
                             style={{ fontSize: "24px", fontWeight: 700 }}
                         >
                             Ant's

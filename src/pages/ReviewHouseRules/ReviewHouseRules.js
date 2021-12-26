@@ -24,18 +24,13 @@ const ReviewHouseRules = () => {
     };
     return (
         <div className='review-house-rules-container'>
-            <div>
-                <h3 style={{ paddingBottom: "15px", fontSize: "25px" }}>
-                    Review House Rules
-                </h3>
+            <div style={{ paddingBottom: "25px" }}>
                 <div className='rules-container'>
-                    <div style={{ width: "40%" }}>
-                        <div
-                            style={{
-                                display: "flex",
-                                justifyContent: "space-between",
-                            }}
-                        >
+                    <div className='house-rules'>
+                        <h3 style={{ paddingBottom: "15px", fontSize: "25px" }}>
+                            Review House Rules
+                        </h3>
+                        <div className='check-in-time'>
                             <div
                                 style={{
                                     display: "flex",

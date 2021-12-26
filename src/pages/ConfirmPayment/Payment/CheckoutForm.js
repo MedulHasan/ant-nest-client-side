@@ -124,16 +124,6 @@ const CheckoutForm = ({ totalPrice }) => {
                     </div>
                 </div>
 
-                <div>
-                    <label>Email</label>
-                    <br />
-                    <input
-                        type='email'
-                        className='payment-email'
-                        placeholder='email'
-                    />
-                </div>
-
                 <p>Card Number</p>
                 <CardNumberElement
                     className='card-element'

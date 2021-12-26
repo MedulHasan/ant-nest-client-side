@@ -239,24 +239,24 @@ const AddListing = () => {
                         />
                         <span>Listing Details</span>
                     </p>
-                    <div style={{ display: "flex", alignItems: "center" }}>
+                    <div className='bed-bath-details'>
                         <div className='basic-info-input-cont2'>
                             <TextField
-                                className='basic-info-input'
+                                className='basic-info-input bed-bath-guest'
                                 label='Bedrooms'
                                 size='small'
                                 name='bedRooms'
                                 onBlur={handleHouseInfo}
                             />
                             <TextField
-                                className='basic-info-input'
+                                className='basic-info-input bed-bath-guest'
                                 label='Bathrooms'
                                 size='small'
                                 name='bathRooms'
                                 onBlur={handleHouseInfo}
                             />
                             <TextField
-                                className='basic-info-input'
+                                className='basic-info-input bed-bath-guest'
                                 label='Max Guest'
                                 size='small'
                                 name='guest'
@@ -265,16 +265,13 @@ const AddListing = () => {
                         </div>
                         <div className='basic-info-input-cont'>
                             <TextField
-                                className='basic-info-input'
+                                className='basic-info-input text-area-input'
                                 label='Details Text'
                                 size='small'
                                 name='details'
                                 onBlur={handleHouseInfo}
                                 multiline
                                 rows={6}
-                                style={{
-                                    width: "600px",
-                                }}
                             />
                         </div>
                     </div>

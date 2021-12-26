@@ -59,7 +59,7 @@
     margin-top: 15px;
     display: flex;
     flex-direction: row !important;
-    width: 313px !important;
+    width: 100% !important;
     column-gap: 5px;
 }
 .guest-collect {
@@ -86,4 +86,10 @@
 .adult-search2 {
     margin: 10px 0px !important;
     width: 180px !important;
+}
+
+@media screen and (max-width: 900px) {
+    .contact-date {
+        width: 100% !important;
+    }
 }

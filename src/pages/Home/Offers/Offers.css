@@ -23,12 +23,28 @@
 .view-all-properties {
     margin-top: 2rem !important;
     text-transform: capitalize !important;
-    /* color: #3C6BFD !important; */
     padding: 10px 20px !important;
 }
 
-@media screen and (max-width: 1450px) {
+@media screen and (max-width: 1200px) {
     .card-container {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 900px) {
+    .offer-cont {
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+    }
+    .offers-container {
+        padding: 0;
+    }
+    .hot-off {
+        text-align: center;
     }
 }

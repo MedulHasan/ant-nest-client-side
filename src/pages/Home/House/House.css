@@ -107,3 +107,29 @@
 .ratting {
     font-size: 16px !important;
 }
+
+@media screen and (max-width: 1200px) {
+    .single-card-container {
+        width: 450px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .single-card-container {
+        width: 345px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .single-card-container {
+        width: 325px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .single-card-container {
+        width: 450px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .single-card-container {
+        width: 400px;
+    }
+}
