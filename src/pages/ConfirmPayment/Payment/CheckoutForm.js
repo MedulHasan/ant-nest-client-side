@@ -20,9 +20,11 @@ import {
 import useAuth from "../../../hooks/useAuth";
 import "./CheckoutForm.css";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const CheckoutForm = ({ totalPrice }) => {
+const CheckoutForm = ({ totalPrice, id }) => {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const houses = useSelector((state) => state.houses);
 
@@ -84,11 +86,12 @@ const CheckoutForm = ({ totalPrice }) => {
             if (errorIntent) {
                 dispatch(errorAlert(true, errorIntent.message));
                 dispatch(loadingRequest(false));
-                console.log(errorIntent.message);
+                // console.log(errorIntent.message);
             } else {
                 dispatch(successAlert(true, "Your Payment successfully done!"));
                 dispatch(loadingRequest(false));
-                console.log(paymentIntent);
+                // console.log(paymentIntent);
+                navigate("/");
             }
         }
     };

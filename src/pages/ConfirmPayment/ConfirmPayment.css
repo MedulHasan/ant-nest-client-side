@@ -1,11 +1,17 @@
 .review-house-rules-container2 {
-    margin-top: 7% !important;
-    margin: 0 5%;
+    margin-top: 2% !important;
+    margin: 0 15%;
 }
 .confirm-payment {
     display: flex;
     justify-content: space-between;
     gap: 15px;
+}
+@media screen and (max-width: 1200px) {
+    .review-house-rules-container2 {
+        margin-top: 7% !important;
+        margin: 0 5%;
+    }
 }
 @media screen and (max-width: 900px) {
     .confirm-payment {

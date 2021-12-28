@@ -7,11 +7,11 @@ const stripePromise = loadStripe(
     "pk_test_51JvuqtDIBQXTyseWr2DBmTUEHU92dHY7QtS5XvXUDxRVJynMuLObBvZ4kn6pVSGqOglelW0HBDnVcO7nopGQ75W700RHLvvfFJ"
 );
 
-const Payment = ({ totalPrice }) => {
+const Payment = ({ totalPrice, id }) => {
     return (
         <div>
             <Elements stripe={stripePromise}>
-                <CheckoutForm totalPrice={totalPrice} />
+                <CheckoutForm totalPrice={totalPrice} id={id} />
             </Elements>
         </div>
     );

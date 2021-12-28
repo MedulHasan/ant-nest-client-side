@@ -41,10 +41,10 @@ const Banner = () => {
 
     return (
         <div className='banner'>
-            {/* <video autoPlay muted loop id='myVideo'>
+            <video autoPlay muted loop id='myVideo'>
                 <source src={banner} type='video/mp4' />
-            </video> */}
-            <img id='myVideo' src={banner1} alt='' />
+            </video>
+            {/* <img id='myVideo' src={banner1} alt='' /> */}
             <div className='banner-container'>
                 <p className='company-type'>Real Estate Searching Platform</p>
                 <Typography variant='h3' className='banner-title'>

@@ -6,8 +6,16 @@ import "./ConfirmPayment.css";
 
 const ConfirmPayment = () => {
     const { state } = useLocation();
-    const { houseTitle, price, cleaningFee, serviceFee, image, type, address } =
-        state.house;
+    const {
+        _id,
+        houseTitle,
+        price,
+        cleaningFee,
+        serviceFee,
+        image,
+        type,
+        address,
+    } = state.house;
     const totalPrice =
         parseInt(price) + parseInt(cleaningFee) + parseInt(serviceFee);
     const { arrivalDate, departureDate, adult, child, babies } =
@@ -15,7 +23,7 @@ const ConfirmPayment = () => {
     return (
         <div className='review-house-rules-container review-house-rules-container2'>
             <div className='confirm-payment'>
-                <Payment totalPrice={totalPrice} />
+                <Payment totalPrice={totalPrice} id={_id} />
                 <div className='rules-container'>
                     <div className='confarmation-info'>
                         <div
