@@ -12,7 +12,7 @@ const YourListing = () => {
     const [myListing, setMyListing] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8888/my-listing/${user.email}`)
+        fetch(`https://ants-nest.herokuapp.com/my-listing/${user.email}`)
             .then((res) => res.json())
             .then((data) => setMyListing(data));
     }, [user.email]);
