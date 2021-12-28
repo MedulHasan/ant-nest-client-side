@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./AddListing.css";
@@ -30,7 +31,7 @@ const AddListing = () => {
     const [type, setType] = useState("House");
     const [images, setImages] = useState([]);
     const [houseData, setHouseData] = useState({});
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(user.email);
     const [phone, setPhone] = useState("");
     const [website, setWebsite] = useState("");
     const dispatch = useDispatch();
@@ -207,7 +208,8 @@ const AddListing = () => {
                             label='Email'
                             size='small'
                             name='email'
-                            onBlur={(e) => setEmail(e.target.value)}
+                            value={user.email}
+                            // onBlur={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div className='basic-info-input-cont'>

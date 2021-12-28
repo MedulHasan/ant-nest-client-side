@@ -11,6 +11,7 @@ import AuthProvider from "./context/AuthProvider";
 import PrivateRoute from "./pages/SignIn/PrivateRoute/PrivateRoute";
 import CustomAlert from "./pages/Shared/CustomAlert/CustomAlert";
 import AddListing from "./pages/AddListing/AddListing";
+import YourListing from "./pages/YourListing/YourListing";
 
 function App() {
     return (
@@ -50,6 +51,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <AddListing />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path='/your-listing'
+                        element={
+                            <PrivateRoute>
+                                <YourListing />
                             </PrivateRoute>
                         }
                     />

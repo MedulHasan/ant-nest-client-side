@@ -1,3 +1,4 @@
+/* eslint-disable import/no-webpack-loader-syntax */
 import React, { useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";

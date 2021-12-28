@@ -4,8 +4,15 @@ import { FaRegEnvelope } from "react-icons/fa";
 import { CgWebsite } from "react-icons/cg";
 import "./HostInfo.css";
 import { Rating } from "@mui/material";
+import { useSelector } from "react-redux";
+import useAuth from "../../../hooks/useAuth";
 
 const HostInfo = ({ house }) => {
+    const { user } = useAuth();
+    const houses = useSelector((state) => state.houses.houses);
+    const myListing = houses.filter(
+        (house) => house.landlord.email === user.email
+    );
     return (
         <div className='host-container'>
             <div className='host-background'></div>
@@ -21,7 +28,7 @@ const HostInfo = ({ house }) => {
                     />
                     <div className='host-name-property'>
                         <h6>{house.landlord.name}</h6>
-                        <p>22 Property Listings</p>
+                        <p>{myListing.length} Property Listings</p>
                         <Rating
                             style={{ fontSize: "18px" }}
                             name='read-only'

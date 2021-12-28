@@ -7,6 +7,7 @@ import { BsPlusLg } from "react-icons/bs";
 import { BiMinus } from "react-icons/bi";
 import DesktopDatePicker from "@mui/lab/DesktopDatePicker";
 import banner from "../../../image/vedio/banner.mp4";
+import banner1 from "../../../image/banner.jpg";
 import "./Banner.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -40,9 +41,10 @@ const Banner = () => {
 
     return (
         <div className='banner'>
-            <video autoPlay muted loop id='myVideo'>
+            {/* <video autoPlay muted loop id='myVideo'>
                 <source src={banner} type='video/mp4' />
-            </video>
+            </video> */}
+            <img id='myVideo' src={banner1} alt='' />
             <div className='banner-container'>
                 <p className='company-type'>Real Estate Searching Platform</p>
                 <Typography variant='h3' className='banner-title'>

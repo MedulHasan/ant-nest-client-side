@@ -17,7 +17,9 @@ import { NavLink } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
 import { MdLogout } from "react-icons/md";
+import { VscListUnordered } from "react-icons/vsc";
 import { IoIosAdd } from "react-icons/io";
+import { AiFillCaretDown } from "react-icons/ai";
 
 const Navigation = () => {
     const { user, logout } = useAuth();
@@ -228,7 +230,12 @@ const Navigation = () => {
                     )}
 
                     {user.email && (
-                        <Box sx={{ flexGrow: 0, margin: "0 15px" }}>
+                        <Box
+                            sx={{
+                                flexGrow: 0,
+                                margin: "0 15px",
+                            }}
+                        >
                             <Tooltip title='Open settings'>
                                 <IconButton
                                     onClick={handleOpenUserMenu}
@@ -237,6 +244,9 @@ const Navigation = () => {
                                     <Avatar
                                         alt={user.displayName}
                                         src={user.photoURL}
+                                    />
+                                    <AiFillCaretDown
+                                        style={{ fontSize: "14px" }}
                                     />
                                 </IconButton>
                             </Tooltip>
@@ -256,18 +266,41 @@ const Navigation = () => {
                                 open={Boolean(anchorElUser)}
                                 onClose={handleCloseUserMenu}
                             >
+                                <div className='signed-in-as max-width-menu'>
+                                    <p>Signed in as</p>
+                                    <h5>{user.displayName}</h5>
+                                </div>
+
                                 <MenuItem
                                     style={{ zIndex: "9999" }}
-                                    onClick={handleCloseNavMenu}
+                                    onClick={handleCloseUserMenu}
+                                >
+                                    <NavLink
+                                        className='navigation-link max-width-menu'
+                                        style={({ isActive }) => {
+                                            return {
+                                                display: "block",
+                                                margin: "1rem 0",
+                                                color: isActive
+                                                    ? "#6191FD"
+                                                    : "#000",
+                                            };
+                                        }}
+                                        to='/your-listing'
+                                    >
+                                        <div className='style-menu'>
+                                            <VscListUnordered />
+                                            <span>Your Listing</span>
+                                        </div>
+                                    </NavLink>
+                                </MenuItem>
+                                <MenuItem
+                                    style={{ zIndex: "9999" }}
+                                    onClick={handleCloseUserMenu}
                                 >
                                     <Typography
+                                        className='navigation-link setting-menu max-width-menu style-menu'
                                         onClick={logout}
-                                        textAlign='center'
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            columnGap: "8px",
-                                        }}
                                     >
                                         <MdLogout />
                                         <span>Logout</span>
