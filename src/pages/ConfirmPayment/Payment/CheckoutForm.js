@@ -27,6 +27,7 @@ const CheckoutForm = ({ totalPrice, id }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const houses = useSelector((state) => state.houses);
+    const bookingHouse = houses.houses.find((house) => house._id === id);
 
     const stripe = useStripe();
     const elements = useElements();
@@ -91,6 +92,20 @@ const CheckoutForm = ({ totalPrice, id }) => {
                 dispatch(successAlert(true, "Your Payment successfully done!"));
                 dispatch(loadingRequest(false));
                 // console.log(paymentIntent);
+
+                // record save to database
+                fetch(`http://localhost:8888/booking`, {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        email: user.email,
+                        house: bookingHouse,
+                        searchHouse: houses.searchHouse,
+                    }),
+                });
+                dispatch(successAlert(true, "Booking successfully done!"));
                 navigate("/");
             }
         }

@@ -12,6 +12,7 @@ import PrivateRoute from "./pages/SignIn/PrivateRoute/PrivateRoute";
 import CustomAlert from "./pages/Shared/CustomAlert/CustomAlert";
 import AddListing from "./pages/AddListing/AddListing";
 import YourListing from "./pages/YourListing/YourListing";
+import YourBooking from "./pages/YourBooking/YourBooking";
 
 function App() {
     return (
@@ -59,6 +60,14 @@ function App() {
                         element={
                             <PrivateRoute>
                                 <YourListing />
+                            </PrivateRoute>
+                        }
+                    />
+                    <Route
+                        path='/your-booking'
+                        element={
+                            <PrivateRoute>
+                                <YourBooking />
                             </PrivateRoute>
                         }
                     />

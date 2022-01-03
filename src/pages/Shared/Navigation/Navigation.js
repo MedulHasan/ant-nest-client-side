@@ -20,6 +20,7 @@ import { MdLogout } from "react-icons/md";
 import { VscListUnordered } from "react-icons/vsc";
 import { IoIosAdd } from "react-icons/io";
 import { AiFillCaretDown } from "react-icons/ai";
+import { BsFillCalendarCheckFill } from "react-icons/bs";
 
 const Navigation = () => {
     const { user, logout } = useAuth();
@@ -291,6 +292,29 @@ const Navigation = () => {
                                         <div className='style-menu'>
                                             <VscListUnordered />
                                             <span>Your Listing</span>
+                                        </div>
+                                    </NavLink>
+                                </MenuItem>
+                                <MenuItem
+                                    style={{ zIndex: "9999" }}
+                                    onClick={handleCloseUserMenu}
+                                >
+                                    <NavLink
+                                        className='navigation-link max-width-menu'
+                                        style={({ isActive }) => {
+                                            return {
+                                                display: "block",
+                                                margin: "1rem 0",
+                                                color: isActive
+                                                    ? "#6191FD"
+                                                    : "#000",
+                                            };
+                                        }}
+                                        to='/your-booking'
+                                    >
+                                        <div className='style-menu'>
+                                            <BsFillCalendarCheckFill />
+                                            <span>Your Booking</span>
                                         </div>
                                     </NavLink>
                                 </MenuItem>
