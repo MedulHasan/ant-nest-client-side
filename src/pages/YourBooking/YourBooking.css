@@ -1,3 +1,9 @@
 .your-booking-container {
     padding: 8% 10%;
 }
+.booking-paper-container {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+}

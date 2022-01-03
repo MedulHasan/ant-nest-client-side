@@ -1,0 +1,7 @@
+.single-booking {
+    padding: 15px;
+}
+.booking-paper-header {
+    display: flex;
+    column-gap: 20px;
+}
