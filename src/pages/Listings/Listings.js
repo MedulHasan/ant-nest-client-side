@@ -32,7 +32,6 @@ const Listings = () => {
             return house;
         }
     });
-
     const handleResetSearch = () => {
         dispatch(addressAction(""));
         dispatch(arrivalDateAction(""));
@@ -75,7 +74,7 @@ const Listings = () => {
                             ))
                         )
                     ) : houses.length === 0 ? (
-                        <CircularProgress className="progress" />
+                        <CircularProgress className='progress' />
                     ) : (
                         houses.map((house) => (
                             <House key={house._id} house={house} />
