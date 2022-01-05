@@ -21,11 +21,11 @@ import {
     arrivalDateAction,
     departureDateAction,
 } from "../../../redux/action/searchAction";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { infoAlert } from "../../../redux/action/alertAction";
 
-const Banner = () => {
-    const navigate = useNavigate();
+const Banner = ({ navigate }) => {
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const searchHouse = useSelector((state) => state.houses.searchHouse);
     const guest = searchHouse.adult + searchHouse.child + searchHouse.babies;
@@ -40,7 +40,7 @@ const Banner = () => {
     };
 
     return (
-        <div className='banner'>
+        <div data-testid='search' className='banner'>
             <video autoPlay muted loop id='myVideo'>
                 <source src={banner} type='video/mp4' />
             </video>

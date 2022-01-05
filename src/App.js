@@ -13,15 +13,17 @@ import CustomAlert from "./pages/Shared/CustomAlert/CustomAlert";
 import AddListing from "./pages/AddListing/AddListing";
 import YourListing from "./pages/YourListing/YourListing";
 import YourBooking from "./pages/YourBooking/YourBooking";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+    const navigate = useNavigate();
     return (
         <div className='App'>
             <AuthProvider>
                 <Navigation />
                 <CustomAlert />
                 <Routes>
-                    <Route path='/' element={<Home />} />
+                    <Route path='/' element={<Home navigate={navigate} />} />
                     <Route path='/listings' element={<Listings />} />
                     <Route
                         path='/singleHouseDetails'
