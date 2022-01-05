@@ -94,7 +94,7 @@ const CheckoutForm = ({ totalPrice, id }) => {
                 // console.log(paymentIntent);
 
                 // record save to database
-                fetch(`http://localhost:8888/booking`, {
+                fetch(`https://ants-nest.herokuapp.com/booking`, {
                     method: "POST",
                     headers: {
                         "content-type": "application/json",

@@ -10,7 +10,7 @@ const YourBooking = () => {
     const [myBooking, setMyBooking] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:8888/booking/${user.email}`)
+        fetch(`https://ants-nest.herokuapp.com/booking/${user.email}`)
             .then((res) => res.json())
             .then((data) => setMyBooking(data));
     }, [user.email]);
