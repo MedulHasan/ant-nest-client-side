@@ -131,6 +131,7 @@ const AddListing = () => {
                             size='small'
                             name='houseTitle'
                             onBlur={handleHouseInfo}
+                            required
                         />
                         <TextField
                             className='basic-info-input'
@@ -141,6 +142,7 @@ const AddListing = () => {
                             onChange={handleChange}
                             name='type'
                             onBlur={handleHouseInfo}
+                            required
                         >
                             {types.map((option) => (
                                 <MenuItem
@@ -157,6 +159,7 @@ const AddListing = () => {
                             size='small'
                             name='price'
                             onBlur={handleHouseInfo}
+                            required
                         />
                     </div>
                     <div className='basic-info-input-cont'>
@@ -166,6 +169,7 @@ const AddListing = () => {
                             size='small'
                             name='cleaningFee'
                             onBlur={handleHouseInfo}
+                            required
                         />
                         <TextField
                             className='basic-info-input'
@@ -173,6 +177,7 @@ const AddListing = () => {
                             size='small'
                             name='serviceFee'
                             onBlur={handleHouseInfo}
+                            required
                         />
                         <span className='basic-info-input'></span>
                     </div>
@@ -195,6 +200,7 @@ const AddListing = () => {
                             size='small'
                             name='address'
                             onBlur={handleHouseInfo}
+                            required
                         />
                         <TextField
                             className='basic-info-input'
@@ -202,6 +208,7 @@ const AddListing = () => {
                             size='small'
                             name='city'
                             onBlur={handleHouseInfo}
+                            required
                         />
                         <TextField
                             className='basic-info-input'
@@ -209,6 +216,7 @@ const AddListing = () => {
                             size='small'
                             name='email'
                             value={user.email}
+                            required
                             // onBlur={(e) => setEmail(e.target.value)}
                         />
                     </div>
@@ -219,6 +227,7 @@ const AddListing = () => {
                             size='small'
                             name='website'
                             onBlur={(e) => setWebsite(e.target.value)}
+                            required
                         />
                         <TextField
                             className='basic-info-input'
@@ -226,6 +235,7 @@ const AddListing = () => {
                             size='small'
                             name='phone'
                             onBlur={(e) => setPhone(e.target.value)}
+                            required
                         />
                         <span className='basic-info-input'></span>
                     </div>
@@ -249,6 +259,7 @@ const AddListing = () => {
                                 size='small'
                                 name='bedRooms'
                                 onBlur={handleHouseInfo}
+                                required
                             />
                             <TextField
                                 className='basic-info-input bed-bath-guest'
@@ -256,6 +267,7 @@ const AddListing = () => {
                                 size='small'
                                 name='bathRooms'
                                 onBlur={handleHouseInfo}
+                                required
                             />
                             <TextField
                                 className='basic-info-input bed-bath-guest'
@@ -263,6 +275,7 @@ const AddListing = () => {
                                 size='small'
                                 name='guest'
                                 onBlur={handleHouseInfo}
+                                required
                             />
                         </div>
                         <div className='basic-info-input-cont'>
@@ -274,6 +287,7 @@ const AddListing = () => {
                                 onBlur={handleHouseInfo}
                                 multiline
                                 rows={6}
+                                required
                             />
                         </div>
                     </div>

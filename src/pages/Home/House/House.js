@@ -32,6 +32,7 @@ const House = ({ house }) => {
         landlord,
         image,
     } = house;
+    // console.log(details);
     return (
         <Card className='single-card-container'>
             <Box className='card-image-container' onClick={handleSingleHouse}>
